@@ -1,0 +1,855 @@
+@import url('https://fonts.googleapis.com/css?family=Volkhov');
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+    -webkit-font-smoothing: antialiased;
+}
+
+.touch {
+    overflow-x: auto !important;
+}
+
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+    display: none !important;
+}
+
+html {
+    -webkit-font-smoothing: subpixel-antialiased;
+    background-color: #1f2228;
+    overflow: hidden;
+}
+
+img {
+    pointer-events: none;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+    -webkit-transition: all 0.25s;
+    -ms-transition: all 0.25s;
+    -o-transition: all 0.25s;
+    transition: all 0.25s;
+}
+
+a:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+h1 {
+    margin: 0;
+    font-family: 'Volkhov', serif;
+    font-size: 31px;
+    font-weight: normal;
+    text-transform: uppercase;
+    line-height: 17px;
+    color: #ffffff;
+}
+
+h2 {
+    margin: 0;
+    padding: 10px 0 0 0;
+    font-family: 'Volkhov', serif;
+    font-size: 17px;
+    font-weight: normal;
+    text-transform: uppercase;
+    line-height: 17px;
+    color: #ffffff;
+}
+
+p {
+    line-height: 24px;
+}
+
+body {
+    overflow: hidden;
+    font-family: 'montserrat';
+    color: rgba(255, 255, 255, 0.15);
+    font-size: 13px;
+    min-height: 100vh;
+    background-color: #1f2228;
+    -webkit-transition: opacity 2s;
+    -ms-transition: opacity 2s;
+    -o-transition: opacity 2s;
+    transition: opacity 2s;
+}
+
+body:not(.loading) {
+    opacity: 1 !important;
+}
+
+body.touch main article {
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+}
+
+body.touch main article::-webkit-scrollbar {
+    height: 0 !important;
+}
+
+body.touch main article div.full {
+    width: 9480px;
+    max-width: 9480px;
+}
+
+body main {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 667;
+    text-align: justify;
+    perspective: 1000px;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: flex;
+}
+
+body main.init article figure:not(:first-child) .hider {
+    width: 0 !important;
+    opacity: 0 !important;
+}
+
+body main.init aside {
+    display: none;
+}
+
+body main article {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex: 0 0 100%;
+    -moz-flex: 0 0 100%;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    -webkit-justify-content: flex-end;
+    -moz-justify-content: flex-end;
+    -ms-justify-content: flex-end;
+    justify-content: flex-end;
+    min-width: 100%;
+    margin: 0 0 60px 0;
+    z-index: 668;
+    transform-style: preserve-3d;
+    overflow: hidden;
+    -webkit-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    -webkit-overflow-scrolling: touch;
+}
+
+body main article[study] {
+    position: absolute;
+    z-index: 669;
+    display: inline-block;
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    background-color: rgba(15, 17, 20, 0.9);
+    overflow-y: auto;
+    z-index: 0;
+    -webkit-transition: opacity 0.5s, z-index 0.25s 0.25s;
+    -ms-transition: opacity 0.5s, z-index 0.25s 0.25s;
+    -o-transition: opacity 0.5s, z-index 0.25s 0.25s;
+    transition: opacity 0.5s, z-index 0.25s 0.25s;
+    -ms-overflow-style: none;
+}
+
+body main article[study]::-webkit-scrollbar {
+    width: 0 !important;
+}
+
+body main article[study].show {
+    z-index: 670;
+    opacity: 1;
+    -webkit-transition: opacity 0.5s, z-index 0s;
+    -ms-transition: opacity 0.5s, z-index 0s;
+    -o-transition: opacity 0.5s, z-index 0s;
+    transition: opacity 0.5s, z-index 0s;
+}
+
+body main article[study].show figure {
+    -webkit-transform: translateY(0vh);
+    -ms-transform: translateY(0vh);
+    -o-transform: translateY(0vh);
+    transform: translateY(0vh);
+}
+
+body main article[study].scroll-up figure {
+    -webkit-transform: translateY(-50vh);
+    -ms-transform: translateY(-50vh);
+    -o-transform: translateY(-50vh);
+    transform: translateY(-50vh);
+    -webkit-transition: opacity 1.5s, transform 0.5s;
+    -ms-transition: opacity 1.5s, transform 0.5s;
+    -o-transition: opacity 1.5s, transform 0.5s;
+    transition: opacity 1.5s, transform 0.5s;
+    transition-timing-function: ease;
+    opacity: 0;
+}
+
+body main article[study] figure {
+    display: inline-block;
+    margin: 0 calc((100vw - 720px) / 2);
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transform-origin: 0;
+    -webkit-transform: translateY(100vh);
+    -ms-transform: translateY(100vh);
+    -o-transform: translateY(100vh);
+    transform: translateY(100vh);
+    -webkit-transition: transform 0.75s, opacity 0.75s;
+    -ms-transition: transform 0.75s, opacity 0.75s;
+    -o-transition: transform 0.75s, opacity 0.75s;
+    transition: transform 0.75s, opacity 0.75s;
+}
+
+body main article[study] figure.selected {
+    opacity: 1;
+}
+
+body main article[study] figure.selected img {
+    height: auto;
+    margin-bottom: 100vh;
+}
+
+body main article[study] figure img {
+    height: 0;
+}
+
+body main article div.full {
+    position: absolute;
+    overflow: hidden;
+    height: 100vh;
+    bottom: 0;
+    left: -360px;
+    padding: 0 60px;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: flex;
+    -webkit-transition: transform 0.5s, opacity 0.5s;
+    -ms-transition: transform 0.5s, opacity 0.5s;
+    -o-transition: transform 0.5s, opacity 0.5s;
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+body main article div.full.shakey {
+    animation: shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    -webkit-transition: translate3d(0, 0, 0);
+    -ms-transition: translate3d(0, 0, 0);
+    -o-transition: translate3d(0, 0, 0);
+    transition: translate3d(0, 0, 0);
+}
+
+body main article div.full figure {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: flex;
+    width: 360px;
+    min-width: 360px;
+    height: 100%;
+    margin: 0 -1px 60px 0;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    box-sizing: content-box;
+}
+
+body main article div.full figure:first-child {
+    margin-left: -1px;
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body main article div.full figure[id^="project"]:hover div.title.p01 {
+    border-left-color: #b85;
+}
+
+body main article div.full figure[id^="project"]:hover div.title.p02 {
+    border-left-color: #2af;
+}
+
+body main article div.full figure[id^="project"]:hover div.title.p03 {
+    border-left-color: #f43;
+}
+
+body main article div.full figure[id^="project"]:hover div.title.p04 {
+    border-left-color: #2b7;
+}
+
+body main article div.full figure[id^="project"]:hover div.title.p05 {
+    border-left-color: #c3d;
+}
+
+body main article div.full figure[id^="project"]:hover div.title.p06 {
+    border-left-color: #f47;
+}
+
+body main article div.full figure[id^="project"]:hover div.title.p07 {
+    border-left-color: #e22;
+}
+
+body main article div.full figure[id^="project"]:hover div.title.p08 {
+    border-left-color: #2af;
+}
+
+body main article div.full figure[id^="project"]:hover div.title.p09 {
+    border-left-color: #b85;
+}
+
+body main article div.full figure[id^="project"]:hover div.title.p10 {
+    border-left-color: #2af;
+}
+
+body main article div.full figure[id^="project"]:hover div.title.p11 {
+    border-left-color: #e22;
+}
+
+body main article div.full figure[id^="project"]:hover div.title.p12 {
+    border-left-color: #ee0;
+}
+
+body main article div.full figure[id^="project"]:hover div.title.p13 {
+    border-left-color: #f47;
+}
+
+body main article div.full figure[id^="project"]:hover div.title.p14 {
+    border-left-color: #b85;
+}
+
+body main article div.full figure[id^="project"]:hover div.title.p15 {
+    border-left-color: #2af;
+}
+
+body main article div.full figure[id^="project"]:hover div.title.p16 {
+    border-left-color: #444;
+}
+
+body main article div.full figure[id^="project"]:hover div.title.p17 {
+    border-left-color: #b85;
+}
+
+body main article div.full figure[id^="project"]:hover div.title.p18 {
+    border-left-color: #f47;
+}
+
+body main article div.full figure[id^="project"]:hover div.title.p19 {
+    border-left-color: #f43;
+}
+
+body main article div.full figure[id^="project"]:hover div.title.p20 {
+    border-left-color: #ee0;
+}
+
+body main article div.full figure[id^="project"]:hover div.title.p21 {
+    border-left-color: #2af;
+}
+
+body main article div.full figure[id^="project"]:hover div.title.p22 {
+    border-left-color: #e22;
+}
+
+body main article div.full figure[id^="project"] img {
+    position: absolute;
+    -webkit-transition: -webkit-filter 4s, filter 4s, opacity 4s;
+    -ms-transition: -webkit-filter 4s, filter 4s, opacity 4s;
+    -o-transition: -webkit-filter 4s, filter 4s, opacity 4s;
+    transition: -webkit-filter 4s, filter 4s, opacity 4s;
+}
+
+body main article div.full figure[id^="project"] img:last-child {
+    left: 360px;
+}
+
+body main article div.full figure[id^="project"] div.title {
+    opacity: 0.15;
+    border-left-color: #ffffff;
+}
+
+body main article div.full figure[id^="project"] div.cover {
+    cursor: pointer;
+    background-color: black;
+}
+
+body main article div.full figure[id^="project"] div.cover.hover img {
+    -webkit-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform: translateX(-360px);
+    -ms-transform: translateX(-360px);
+    -o-transform: translateX(-360px);
+    transform: translateX(-360px);
+    -webkit-filter: saturate(0%);
+    -ms-filter: saturate(0%);
+    -o-filter: saturate(0%);
+    filter: saturate(0%);
+    opacity: 0.4;
+}
+
+body main article div.full figure[id^="project"] div.hider {
+    width: 360px;
+    overflow: hidden;
+    position: relative;
+    -webkit-transition: width 0.5s;
+    -ms-transition: width 0.5s;
+    -o-transition: width 0.5s;
+    transition: width 0.5s;
+}
+
+body main article div.full figure[id^="project"] div.hider .title {
+    opacity: 1;
+    margin: -20px 0;
+}
+
+body main article div.full figure[id^="project"] div.hider .title h1,
+body main article div.full figure[id^="project"] div.hider .title h2 {
+    cursor: pointer;
+}
+
+body main article div.full figure#contact div.description {
+    padding: 160px 40px 180px 40px;
+    line-height: 25px;
+    z-index: 669;
+}
+
+body main article div.full figure#friends {
+    width: 720px;
+    min-width: 720px;
+}
+
+body main article div.full figure#friends div.cover {
+    width: 720px;
+    height: auto;
+    padding: 0 0 190px 0;
+    opacity: 0.15;
+}
+
+body main article div.full figure div.introduction {
+    position: absolute;
+    width: 360px;
+    bottom: 60px;
+    margin-left: 360px;
+    padding: 40px;
+}
+
+body main article div.full figure div.introduction h1 {
+    font-family: 'Volkhov', serif;
+    font-size: 31px;
+    text-align: left;
+    line-height: 40px;
+    color: #ffffff;
+}
+
+body main article div.full figure div.introduction h1:last-child {
+    opacity: 0.25;
+}
+
+body main article div.full figure div.introduction h1 div {
+    width: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+    -webkit-transition: width 0.5s;
+    -ms-transition: width 0.5s;
+    -o-transition: width 0.5s;
+    transition: width 0.5s;
+}
+
+body main article div.full figure div.introduction h1 div.show {
+    width: 280px;
+}
+
+body main article div.full figure div.index {
+    position: absolute;
+    z-index: 1;
+    bottom: 550px;
+    height: 15px;
+    line-height: 15px;
+    padding: 0 0 0 40px;
+    font-family: 'montserrat-bold';
+    font-size: 18px;
+    text-transform: uppercase;
+    overflow: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+body main article div.full figure div.title {
+    position: absolute;
+    z-index: 667;
+    bottom: 0px;
+    width: 540px;
+    height: 40px;
+    padding: 0 36px;
+    margin: 40px 0;
+    border-left: 4px solid rgba(255, 255, 255, 0.15);
+    transform-origin: 30px -10px 0px;
+    -webkit-transform: translate3d(0, 0, 0) rotate(-90deg);
+    -ms-transform: translate3d(0, 0, 0) rotate(-90deg);
+    -o-transform: translate3d(0, 0, 0) rotate(-90deg);
+    transform: translate3d(0, 0, 0) rotate(-90deg);
+    -webkit-transition: border-left-color 0.25s;
+    -ms-transition: border-left-color 0.25s;
+    -o-transition: border-left-color 0.25s;
+    transition: border-left-color 0.25s;
+}
+
+body main article div.full figure div.cover {
+    display: inline-block;
+    width: 360px;
+    height: 540px;
+    position: absolute;
+    bottom: 60px;
+    overflow: hidden;
+    -webkit-transition: -webkit-filter 0.5s, filter 0.5s, opacity 0.5s;
+    -ms-transition: -webkit-filter 0.5s, filter 0.5s, opacity 0.5s;
+    -o-transition: -webkit-filter 0.5s, filter 0.5s, opacity 0.5s;
+    transition: -webkit-filter 0.5s, filter 0.5s, opacity 0.5s;
+}
+
+body main article div.full figure div.description {
+    position: absolute;
+    padding: 33px 40px;
+    font-family: 'montserrat-bold';
+    font-weight: bold;
+    font-size: 11px;
+    text-transform: uppercase;
+    line-height: 25px;
+    font-weight: 400;
+    bottom: 60px;
+    width: 360px;
+}
+
+body main aside {
+    transform-origin: 725px;
+    position: absolute;
+    top: 30px;
+    z-index: 1000;
+    left: calc(((100vw - 720px) / 2) + 40px);
+    width: 720px;
+    text-align: right;
+    opacity: 0;
+    pointer-events: auto;
+    -webkit-transform: rotate(-90deg) translateX(100vh);
+    -ms-transform: rotate(-90deg) translateX(100vh);
+    -o-transform: rotate(-90deg) translateX(100vh);
+    transform: rotate(-90deg) translateX(100vh);
+    -webkit-transition: transform 0.75s, opacity 0.75s;
+    -ms-transition: transform 0.75s, opacity 0.75s;
+    -o-transition: transform 0.75s, opacity 0.75s;
+    transition: transform 0.75s, opacity 0.75s;
+}
+
+body main aside.show {
+    opacity: 1;
+    -webkit-transform: rotate(-90deg) translateX(0vh);
+    -ms-transform: rotate(-90deg) translateX(0vh);
+    -o-transform: rotate(-90deg) translateX(0vh);
+    transform: rotate(-90deg) translateX(0vh);
+}
+
+body main aside.scroll-up {
+    opacity: 0;
+    -webkit-transform: rotate(-90deg) translateX(100vh);
+    -ms-transform: rotate(-90deg) translateX(100vh);
+    -o-transform: rotate(-90deg) translateX(100vh);
+    transform: rotate(-90deg) translateX(100vh);
+    -webkit-transition: opacity 0.25s 0s, transform 1.5s;
+    -ms-transition: opacity 0.25s 0s, transform 1.5s;
+    -o-transition: opacity 0.25s 0s, transform 1.5s;
+    transition: opacity 0.25s 0s, transform 1.5s;
+}
+
+body main aside h2 {
+    position: absolute;
+    right: 0px;
+    line-height: 10px;
+    cursor: pointer;
+}
+
+body main aside h2:hover span:last-child {
+    width: 120px;
+}
+
+body main aside h2 img {
+    margin: 0 10px 0 0;
+    padding: 1px 0 0 0;
+}
+
+body main aside h2 span {
+    opacity: 0.25;
+}
+
+body main aside h2 span:last-child {
+    position: absolute;
+    z-index: 10;
+    left: 80px;
+    top: 11px;
+    width: 0px;
+    overflow: hidden;
+    color: white;
+    opacity: 1;
+    white-space: nowrap;
+    -webkit-transition: width 0.5s;
+    -ms-transition: width 0.5s;
+    -o-transition: width 0.5s;
+    transition: width 0.5s;
+}
+
+body main div#cache {
+    display: none;
+}
+
+body main footer {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: flex;
+    -webkit-justify-content: flex-start;
+    -moz-justify-content: flex-start;
+    -ms-justify-content: flex-start;
+    justify-content: flex-start;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    padding: 0 60px;
+    z-index: 668;
+    background-color: #0f1114;
+    font-size: 10px;
+    font-family: 'Volkhov', serif;
+}
+
+body main footer div {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    -ms-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+}
+
+body main footer div.item {
+    min-width: 360px;
+    padding: 0 40px;
+    text-transform: uppercase;
+    -webkit-transition: width 0.5s;
+    -ms-transition: width 0.5s;
+    -o-transition: width 0.5s;
+    transition: width 0.5s;
+}
+
+body main footer div.item:last-child {
+    position: absolute;
+    right: 60px;
+    top: 25px;
+    display: inline-block;
+}
+
+body main footer div.item:last-child span {
+    float: right;
+}
+
+body main footer div.item img.signo-grey {
+    opacity: 0.25;
+}
+
+body main footer div.item div {
+    position: absolute;
+    width: 0px;
+    overflow: hidden;
+    display: inline-block;
+    height: 60px;
+    left: 100px;
+    top: 0px;
+    -webkit-transition: width 0.5s, opacity 0.25s;
+    -ms-transition: width 0.5s, opacity 0.25s;
+    -o-transition: width 0.5s, opacity 0.25s;
+    transition: width 0.5s, opacity 0.25s;
+}
+
+body main footer div.item div.highlight {
+    cursor: pointer;
+    width: 140px;
+}
+
+body main footer div.item div.highlight:hover {
+    opacity: 0.25;
+}
+
+body main footer div.item span {
+    color: white;
+    opacity: 0.25;
+}
+
+[cache] {
+    display: none;
+}
+
+@media only screen and (max-height: 660px) {
+    body main article div.full figure {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    body main article div.full figure div.cover,
+    body main article div.full figure div.description,
+    body main article div.full figure div.introduction {
+        bottom: 0;
+    }
+    body main article div.full figure div.title {
+        margin: 0 !important;
+        transform-origin: 40px 0px 0px;
+    }
+    body main article div.full figure div.index {
+        top: calc(100vh - 600px + 100px);
+    }
+}
+
+@media only screen and (max-height: 600px) {
+    body main article {
+        margin: 0;
+    }
+    body main article div.full figure#contact .description {
+        padding-bottom: 120px !important;
+    }
+    body main article div.full figure div.title,
+    body main article div.full figure div.description,
+    body main article div.full figure div.introduction {
+        bottom: 60px;
+    }
+}
+
+@media only screen and (max-width: 780px) {
+    body main footer .fullscreen-button {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 660px) {
+    body main footer .message-button {
+        display: none;
+    }
+}
+
+@media only screen and (max-height: 540px) {
+    body main article div.full figure#friends .cover,
+    body main article div.full figure#contact .description {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        bottom: 100px !important;
+        top: initial;
+    }
+    body main article div.full figure>div.title {
+        display: none;
+    }
+    body main article div.full figure div.index {
+        top: 40px;
+    }
+    body main article div.full figure div.cover {
+        bottom: initial;
+        top: 0;
+    }
+    body main article div.full figure div.hider {
+        -webkit-transition: width 0.5s, opacity 0.5s !important;
+        -ms-transition: width 0.5s, opacity 0.5s !important;
+        -o-transition: width 0.5s, opacity 0.5s !important;
+        transition: width 0.5s, opacity 0.5s !important;
+    }
+    body main article div.full figure div.hider .cover .title {
+        position: fixed;
+        transform-origin: initial;
+        bottom: calc(100.2px);
+        border: none;
+        padding: 0 0 0 40px;
+        z-index: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        -o-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    body main article div.full figure div.hider .cover .title h1 {
+        font-size: 24px;
+    }
+}
+
+@media only screen and (max-height: 390px) {
+    body main article div.full figure .index {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    body main footer .designer {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 420px) and (orientation: portrait) {
+    body main article div.full {
+        left: calc(-420px);
+    }
+    body main article[study] figure {
+        margin: 0;
+    }
+    body main article[study] figure img {
+        width: 100vw;
+    }
+    body main footer {
+        padding: 0;
+    }
+    body main footer div.item div {
+        left: 40px;
+    }
+}
+
+@keyframes shake {
+    0%,
+    100% {
+        -webkit-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        -o-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        -webkit-transform: translate3d(-360px, 0, 0);
+        -ms-transform: translate3d(-360px, 0, 0);
+        -o-transform: translate3d(-360px, 0, 0);
+        transform: translate3d(-360px, 0, 0);
+    }
+}

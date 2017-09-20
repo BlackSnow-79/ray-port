@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html ng-app="Hellowiktor">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <title>Raymond Tuấn</title>
+    <link rel="icon" href="assets/img/favicon-16x16.png">
+
+    <style type="text/css">
+        @charset "UTF-8";
+        [ng\:cloak],
+        [ng-cloak],
+        [data-ng-cloak],
+        [x-ng-cloak],
+        .ng-cloak,
+        .x-ng-cloak,
+        .ng-hide:not(.ng-hide-animate) {
+            display: none !important;
+        }
+
+        ng\:form {
+            display: block;
+        }
+
+        .ng-animate-shim {
+            visibility: hidden;
+        }
+
+        .ng-anchor {
+            position: absolute;
+        }
+    </style>
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <meta name="description" content="Raymond Tuấn is a UI designer">
+    <meta property="og:url" content="http://hellowiktor.com">
+    <meta property="og:title" content="Raymond Tuấn">
+    <meta property="og:image" content="http://hellowiktor.com/img/facebook-320x320.png">
+    <meta property="og:description" content="Raymond Tuấn is a UI designer">
+    <meta property="og:updated_time" content="1449791116">
+</head>
+
+<body ng-cloak ng-controller="PageController" ng-class="{ 'loading': isLoading, 'touch': isTouchDevice }" style="opacity: 0;">
+    <main ng-class="{ 'init': isInitializing }">
+        <article id="projects" ng-class="{ 'touch': isTouchDevice }">
+            <div scrollable class="full" ng-class="{ 'shakey': shake }">
+                <figure>
+                    <div class="index">About</div>
+                    <div class="cover">
+                        <img src="assets/img/hellowiktor.png" />
+                    </div>
+                    <div class="description">Viktor Vörös is a digital designer who
+                        <br />is passionate about his work, keeping
+                        <br />his ambitions high and quality
+                        <br />in focus at all times.</div>
+                    <div class="title">&nbsp;</div>
+                    <div class="introduction">
+                        <h1>
+                            <div>Portfolio</div>
+                            <div>of Designer</div>
+                            <div>Viktor Vörös</div>
+                        </h1>
+                        <h1>
+                            <div>with more</div>
+                            <div>than 5 years </div>
+                            <div>experience</div>
+                        </h1>
+                    </div>
+                </figure>
+                <figure project id="project-0{{ $index + 1 }}" ng-repeat="project in activePage.items track by $index">
+                    <div class="title"></div>
+                    <div class="index">
+                        <span ng-if="$index < 9">0</span><span>{{ $index + 1 }}</span>
+                    </div>
+                    <div class="hider">
+                        <div class="cover" ng-click="showStudy($index)">
+                            <div class="title p{{ $index + 1 < 10 ? 0 : '' }}{{ $index + 1 }}" ng-click="showStudy($index)">
+                                <h1>{{ project.title }}</h1>
+                                <h2>{{ project.sub }}</h2>
+                            </div>
+                            <img ng-src="assets/img/{{ project.img.cover }}" />
+                            <img ng-src="assets/img/{{ project.img.cover }}" />
+                        </div>
+                    </div>
+                </figure>
+                <figure id="contact">
+                    <div class="index">Contact</div>
+                    <div class="description">
+                        <div>Are you interested in collaborating?</div>
+                        <a href="mailto:hellowiktor@gmail.com" target="_blank">hellowiktor@gmail.com</a>
+                        <div>See more of Viktor’s works on</div>
+                        <a href="https://dribbble.com/hellowiktor" target="_blank">Dribbble</a>
+                        <div>Read his thoughts on</div>
+                        <a href="https://medium.com/@hellowiktor" target="_blank">Medium</a>
+                        <div>Check out his resume on</div>
+                        <a href="https://linkedin.com/in/hellowiktor" target="_blank">LinkedIn</a>
+                    </div>
+                    <div class="title">&nbsp;</div>
+                </figure>
+            </div>
+        </article>
+        <article study ng-class="{ 'show': study && !study.close, 'scroll-up': study.close }">
+            <figure ng-repeat="project in activePage.items track by $index" ng-class="{ 'selected': $index === study.index }">
+                <img ng-src="assets/img/{{ project.img.study }}" />
+            </figure>
+        </article>
+        <aside ng-class="{ 'show': study && !study.close, 'scroll-up': study.close }">
+            <h2 ng-click="hideStudy()">
+                <img ng-src="assets/img/back.png">Back <span>to Gallery</span><span class="highlight">to Gallery</span>
+            </h2>
+        </aside>
+        <footer>
+            <div class="item">
+                <img src="assets/img/viktor-voros-signo.png" class="signo-grey" />
+                <div ng-class="{ 'highlight': !isInitializing }" ng-click="showViktor()">
+                    <img src="assets/img/viktor-voros-signo.png" alt="Viktor Vörös signature" />
+                </div>
+                <span class="designer">designer</span>
+            </div>
+            <div class="item">
+                <a href="mailto:trantuanat@gmail" class="message-button">Write a message to Raymond Tuấn</a>
+                <a href="#" onclick="toggleFullScreen()" class="fullscreen-button">
+                    <img src="assets/img/fullscreen.png" alt="Go fullscreen">
+                </a>
+            </div>
+            <div class="item">
+            </div>
+        </footer>
+    </main>
+    <div cache>
+        <div ng-repeat="project in pages[0].items track by $index">
+            <img ng-src="assets/img/{{ project.img.study }}" alt="{{ project.title }} case study by Hellowiktor" title="{{ project.title }} case study by Hellowiktor" ng-onload="project.img._loaded++" />
+            <img ng-src="assets/img/{{ project.img.cover }}" alt="{{ project.title }} project cover" title="{{ project.title }} project cover" ng-onload="project.img._loaded++" />
+        </div>
+    </div>
+    <script src="assets/js/angular.min.js"></script>
+    <script src="assets/js/hellowiktor.js"></script>
+</body>
+</html>
