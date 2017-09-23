@@ -667,19 +667,12 @@ body main footer div {
 
 body main footer div.item {
     min-width: 360px;
-    padding: 0 40px;
+    padding: 0;
     text-transform: uppercase;
     -webkit-transition: width 0.5s;
     -ms-transition: width 0.5s;
     -o-transition: width 0.5s;
     transition: width 0.5s;
-}
-
-body main footer div.item:last-child {
-    position: absolute;
-    right: 60px;
-    top: 25px;
-    display: inline-block;
 }
 
 body main footer div.item:last-child span {
