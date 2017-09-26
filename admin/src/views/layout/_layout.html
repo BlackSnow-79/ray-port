@@ -1,0 +1,34 @@
+{% extends "_layout-base.html" %}
+<!--header-->
+{% block header%}
+	{% include "../block/_header.html" %}
+{% endblock %}
+<!--page-container-->
+{% block page-container %}{% endblock %}
+<!--footer-->
+{% block footer%}
+	{% include "../block/_footer.html" %}
+{% endblock %}
+<!--modal-->
+{% block modal%}
+<div class="modal warningModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Notice</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Hey Tuấn!</p>
+                <p>Are you sure to remove this project?</p>
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-sm btn-secondary" href="">Cancel</a>
+                <button class="btn btn-sm btn-primary" type="button" >Sumit</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% set current_page = 'project-detail' %} {% extends "layout/_layout.html" %} {% block page-container %}
+<main>
+    <div class="container">
+        <div class="form-wrap">
+            <div class="form-group">
+                <label>Project's title</label>
+                <input class="form-control" value="myFace" type="text">
+            </div>
+            <div class="form-group">
+                <label>Project's sub</label>
+                <input class="form-control" value="myFace UI" type="text">
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label>Choose cover image</label>
+                        <div class="img-view-box">
+                            <img src="assets/images/upload/upload-img-item.jpg" title="" alt="myface">
+                            <input class="upload-btn upload-img-btn" type="file" name="files">
+                        </div>
+                        <p class="img-name">
+                            <small class="form-text text-muted">myface-cover.png</small>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label>Choose study image</label>
+                        <div class="img-view-box">
+                            <img src="assets/images/upload/upload-img-item.jpg" title="" alt="myface">
+                            <input class="upload-btn upload-img-btn" type="file" name="files">
+                        </div>
+                        <p class="img-name">
+                            <small class="form-text text-muted">myface-study.png</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Project's color</label>
+                <input class="form-control" value="#987" type="text">
+            </div>
+            <div class="form-group text-right">
+                <a class="btn btn-sm btn-secondary" href="">Cancel</a>
+                <button class="btn  btn-sm btn-primary" type="submit">Submit</button>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
