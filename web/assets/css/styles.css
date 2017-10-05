@@ -217,7 +217,7 @@ body main article[study].scroll-up figure {
 
 body main article[study] figure {
     display: inline-block;
-    margin: 0 calc((100vw - 720px) / 2);
+    margin: 0 calc((100vw - 880px) / 2);
     position: absolute;
     top: 0;
     opacity: 0;
@@ -441,12 +441,12 @@ body main article div.full figure#contact div.description {
 }
 
 body main article div.full figure#friends {
-    width: 720px;
-    min-width: 720px;
+    width: 880px;
+    min-width: 880px;
 }
 
 body main article div.full figure#friends div.cover {
-    width: 720px;
+    width: 880px;
     height: auto;
     padding: 0 0 190px 0;
     opacity: 0.15;
@@ -550,12 +550,12 @@ body main article div.full figure div.description {
 }
 
 body main aside {
-    transform-origin: 725px;
+    transform-origin: 885px;
     position: absolute;
     top: 30px;
     z-index: 1000;
-    left: calc(((100vw - 720px) / 2) + 40px);
-    width: 720px;
+    left: calc(((100vw - 880px) / 2) + 40px);
+    width: 880px;
     text-align: right;
     opacity: 0;
     pointer-events: auto;
@@ -828,6 +828,14 @@ body main footer div.item span {
     }
     body main footer div.item div {
         left: 40px;
+    }
+}
+@media only screen and (max-width: 1024px) {
+    body main article[study] figure {
+        margin: 0;
+    }
+    body main article[study] figure img {
+        width: 100vw;
     }
 }
 
